@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report3_Master_Transaction" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="939be875-e2f4-4a6c-9148-a72c975b9c5b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     master_transaction.`Payment_id` AS master_transaction_Payment_id,
+     master_transaction.`Name` AS master_transaction_Name,
+     master_transaction.`Email` AS master_transaction_Email,
+     master_transaction.`Amount` AS master_transaction_Amount,
+     master_transaction.`Payment_method` AS master_transaction_Payment_method,
+     master_transaction.`Payment_date` AS master_transaction_Payment_date
+FROM
+     `master_transaction` master_transaction]]>
+	</queryString>
+	<field name="master_transaction_Payment_id" class="java.lang.Integer"/>
+	<field name="master_transaction_Name" class="java.lang.String"/>
+	<field name="master_transaction_Email" class="java.lang.String"/>
+	<field name="master_transaction_Amount" class="java.lang.Integer"/>
+	<field name="master_transaction_Payment_method" class="java.lang.String"/>
+	<field name="master_transaction_Payment_date" class="java.sql.Date"/>
+	<group name="master_transaction_Payment_id">
+		<groupExpression><![CDATA[$F{master_transaction_Payment_id}]]></groupExpression>
+		<groupHeader>
+			<band height="27">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="3" width="823" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="9a67f3f0-3eed-42fa-855a-b1a113cc7781"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement style="SubTitle" mode="Opaque" x="2" y="0" width="821" height="24" forecolor="#FFFFFF" backcolor="#FFCCFF" uuid="213d0b48-1b2e-4b08-9b66-ba2dcfaaf6c3"/>
+						<textElement>
+							<font isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{master_transaction_Payment_id}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="26"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="66" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="823" height="66" backcolor="#000000" uuid="ba9d8e92-2c63-413d-b905-1502ef22ddd2"/>
+				<staticText>
+					<reportElement style="Title" mode="Opaque" x="0" y="0" width="823" height="66" backcolor="#FF0033" uuid="37f42009-487e-45b4-bb53-6eb7b6a6f369"/>
+					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+					<textElement verticalAlignment="Bottom">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[                 Payment Master]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="0" y="0" width="823" height="18" forecolor="#FFFFFF" backcolor="#CC0000" uuid="b2f8dff6-39e2-4b3e-be4f-7db812210357"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="159" y="0" width="159" height="18" forecolor="#FFFFFF" uuid="286dbe91-a3f6-4d9a-800d-49e6b6552f22"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="318" y="0" width="159" height="18" forecolor="#FFFFFF" uuid="ae9bde9d-e341-49c7-8a53-406372b83a25"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="477" y="0" width="159" height="18" forecolor="#FFFFFF" uuid="2b19d901-b4d2-49ec-94f5-03245f1b3d5c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment_method]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="636" y="0" width="159" height="18" forecolor="#FFFFFF" uuid="e592a1e6-2b9a-40b3-9255-e170708cf71f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment_date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="743a6402-70a1-4997-81f7-93c68c8f463d"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="159" height="18" uuid="26c35c5d-fa07-45f6-a5f7-da8a4279bb77"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_transaction_Name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="159" y="0" width="159" height="18" uuid="03fdcaa9-cc25-4c45-83ae-9e78edc3f49c"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_transaction_Email}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="318" y="0" width="159" height="18" uuid="deb1b983-fbf3-4295-87d1-46ec72547a3e"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_transaction_Amount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="477" y="0" width="159" height="18" uuid="17b75a86-f845-475f-b320-3fad12235ae2"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_transaction_Payment_method}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="636" y="0" width="161" height="18" uuid="d576561d-99d0-4f2a-bedd-304dccf4709a"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_transaction_Payment_date}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="18" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="a2196212-95cf-4099-ac49-f13d5ea3fb84"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

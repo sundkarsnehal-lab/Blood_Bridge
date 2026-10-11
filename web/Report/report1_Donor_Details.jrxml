@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1_Donor_Details" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fbe308cb-ef88-4d06-9a35-e805e12050ef">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     donor_details.`Donor_id` AS donor_details_Donor_id,
+     donor_details.`Name` AS donor_details_Name,
+     donor_details.`Age` AS donor_details_Age,
+     donor_details.`Weight` AS donor_details_Weight,
+     donor_details.`Gender` AS donor_details_Gender,
+     donor_details.`Blood_Group` AS donor_details_Blood_Group,
+     donor_details.`Blood_Type` AS donor_details_Blood_Type,
+     donor_details.`Contact_no` AS donor_details_Contact_no,
+     donor_details.`Donation_Date` AS donor_details_Donation_Date,
+     donor_details.`Address` AS donor_details_Address,
+     donor_details.`Quantity` AS donor_details_Quantity
+FROM
+     `donor_details` donor_details]]>
+	</queryString>
+	<field name="donor_details_Donor_id" class="java.lang.Integer"/>
+	<field name="donor_details_Name" class="java.lang.String"/>
+	<field name="donor_details_Age" class="java.lang.Integer"/>
+	<field name="donor_details_Weight" class="java.lang.String"/>
+	<field name="donor_details_Gender" class="java.lang.String"/>
+	<field name="donor_details_Blood_Group" class="java.lang.String"/>
+	<field name="donor_details_Blood_Type" class="java.lang.String"/>
+	<field name="donor_details_Contact_no" class="java.lang.Long"/>
+	<field name="donor_details_Donation_Date" class="java.sql.Date"/>
+	<field name="donor_details_Address" class="java.lang.String"/>
+	<field name="donor_details_Quantity" class="java.lang.Integer"/>
+	<group name="donor_details_Donor_id">
+		<groupExpression><![CDATA[$F{donor_details_Donor_id}]]></groupExpression>
+		<groupHeader>
+			<band height="27">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="3" width="802" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="b230a934-6c50-4ddf-91c1-0aa7cdb27258"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement style="SubTitle" mode="Opaque" x="2" y="0" width="800" height="24" forecolor="#FFFFFF" backcolor="#FFCCFF" uuid="6caac30d-8b6b-4214-88f3-eb06048c1393"/>
+						<textElement>
+							<font isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{donor_details_Donor_id}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="66" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="797" height="66" backcolor="#FF0033" uuid="9ed04e3a-906e-4ce4-93ec-55c9e116d7ed"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="797" height="66" uuid="b737dc4e-e51a-4e10-a108-50f15117332d"/>
+					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+					<textElement verticalAlignment="Bottom">
+						<font isBold="true" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[                      Donor Details]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="370" y="37" width="316" height="29" uuid="35276e54-7270-4ef7-9be8-80713ca21507"/>
+					<textElement textAlignment="Right">
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="0" y="0" width="797" height="18" forecolor="#FFFFFF" backcolor="#990000" uuid="12b06136-8f1c-4c42-8a84-be8f9933290c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="79" y="0" width="79" height="18" forecolor="#FFFFFF" uuid="fd8e8adc-a217-4d18-8c14-046921f33bfc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="158" y="0" width="79" height="18" forecolor="#FFFFFF" uuid="1db9f140-6376-4020-af01-0a1543d596fc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Weight]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="237" y="0" width="79" height="18" forecolor="#FFFFFF" uuid="05d04abe-224d-4301-9cf9-79fef833783b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="316" y="0" width="79" height="18" forecolor="#FFFFFF" uuid="081c1379-3f1f-4ea2-a8e7-79071bd5efc0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[B_Group]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="395" y="0" width="79" height="18" forecolor="#FFFFFF" uuid="32c4c69f-c5f6-48d5-9546-b00f1e2a2093"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[B_Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="474" y="0" width="79" height="18" forecolor="#FFFFFF" uuid="6539a1f6-678c-4314-b02a-9944926858ab"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact_no]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="553" y="0" width="79" height="18" forecolor="#FFFFFF" uuid="df641303-a17b-4053-93cf-15d1e481501e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[D_Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="632" y="0" width="79" height="18" forecolor="#FFFFFF" uuid="af285469-343c-4666-a2b0-5486c6b9c83c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="711" y="0" width="79" height="18" forecolor="#FFFFFF" uuid="9b20adac-4919-4d88-853b-c3ca402e3e69"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="15c17c92-a734-4657-af3e-a089247c0e00"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="79" height="18" uuid="4e3e9dc8-b1d8-40e1-8b56-e072838c9961"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{donor_details_Name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="79" y="0" width="79" height="18" uuid="0ebd3ec9-a6f1-46f0-87bc-47548c4959f5"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{donor_details_Age}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="158" y="0" width="79" height="18" uuid="b066919f-66e4-4c00-b67d-7320c10035e8"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{donor_details_Weight}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="237" y="0" width="79" height="18" uuid="89e5e426-83c1-4bae-9b93-ca3bd0b7afd3"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{donor_details_Gender}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="316" y="0" width="79" height="18" uuid="eb57b6dd-65e6-4fe6-bfe0-c6f19bc1967b"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{donor_details_Blood_Group}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="395" y="0" width="79" height="18" uuid="c302b34c-b63b-4d22-8307-08735929083d"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{donor_details_Blood_Type}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="474" y="0" width="79" height="18" uuid="45f75d1a-3b0c-438b-95b4-09f98a90266c"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{donor_details_Contact_no}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+					<reportElement style="Detail" positionType="Float" x="553" y="0" width="79" height="18" uuid="4eb74dd5-4b12-44a4-bef9-9296741f6820"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{donor_details_Donation_Date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="632" y="0" width="79" height="18" uuid="622298fa-8dd4-4fdf-aa8f-6d2eb5ad5cbe"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{donor_details_Address}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="711" y="0" width="79" height="18" uuid="0ed097f6-99f3-49ac-9780-0ad1763fe090"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{donor_details_Quantity}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="2bf8bc56-e3b0-4a65-9252-2610f674f8cf"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

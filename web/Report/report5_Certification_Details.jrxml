@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report5_Certification_Details" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1d30bc2c-97e7-4e12-8ae7-6887c8ab592a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     certification_details.`Certificate_id` AS certification_details_Certificate_id,
+     certification_details.`Donor_name` AS certification_details_Donor_name,
+     certification_details.`Blood_Group` AS certification_details_Blood_Group,
+     certification_details.`Donation_Date` AS certification_details_Donation_Date,
+     certification_details.`Blood_Type` AS certification_details_Blood_Type,
+     certification_details.`Issued_By` AS certification_details_Issued_By,
+     certification_details.`Issue_Date` AS certification_details_Issue_Date,
+     certification_details.`Certification_Status` AS certification_details_Certification_Status,
+     certification_details.`Contact_no` AS certification_details_Contact_no
+FROM
+     `certification_details` certification_details]]>
+	</queryString>
+	<field name="certification_details_Certificate_id" class="java.lang.Integer"/>
+	<field name="certification_details_Donor_name" class="java.lang.String"/>
+	<field name="certification_details_Blood_Group" class="java.lang.String"/>
+	<field name="certification_details_Donation_Date" class="java.sql.Date"/>
+	<field name="certification_details_Blood_Type" class="java.lang.String"/>
+	<field name="certification_details_Issued_By" class="java.lang.String"/>
+	<field name="certification_details_Issue_Date" class="java.sql.Date"/>
+	<field name="certification_details_Certification_Status" class="java.lang.String"/>
+	<field name="certification_details_Contact_no" class="java.lang.Long"/>
+	<group name="certification_details_Certificate_id">
+		<groupExpression><![CDATA[$F{certification_details_Certificate_id}]]></groupExpression>
+		<groupHeader>
+			<band height="27">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="3" width="822" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="a6cf93ec-fce8-4cdd-9570-e170230cda73"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement style="SubTitle" mode="Opaque" x="2" y="0" width="820" height="24" forecolor="#FFFFFF" backcolor="#FFCCFF" uuid="68fab2ef-b8df-4a7c-bc77-723f82152a93"/>
+						<textElement>
+							<font isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{certification_details_Certificate_id}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="822" height="66" backcolor="#000000" uuid="cea05260-2b64-4d7a-97b7-76802e950def"/>
+				<staticText>
+					<reportElement style="Title" mode="Opaque" x="0" y="0" width="822" height="66" backcolor="#FF0000" uuid="816ba188-4c67-4952-bb47-8e7a7175c7cb"/>
+					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+					<textElement verticalAlignment="Bottom">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[                   Certification Details]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="0" y="0" width="822" height="18" forecolor="#FFFFFF" backcolor="#990000" uuid="4b7d8eca-2946-4d83-9555-25da6e5011f0"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Donor_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="99" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="0102384d-ae08-4fc3-b9f2-6697f7699fc7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Blood_Group]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="198" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="d9ee3ccb-cef2-4e44-9d7b-bec9d2815887"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Donation_Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="297" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="0a344a78-df34-4ab8-9d92-4d4b89e7d664"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Blood_Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="396" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="bc28465c-01f0-4a45-82af-e8f70961d62f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Issued_By]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="495" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="175d0f66-6823-464d-89bd-9ab9476aadef"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Issue_Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="594" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="4a284a39-b194-4fd9-aabe-bfdd612b10fa"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="693" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="2a207b19-f34d-4a9d-97b0-63f0c43be481"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact_no]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="3059ac4a-41f2-43c4-b8ad-08dd550149ee"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="99" height="18" uuid="ea0f263e-4342-4175-8878-ef9f316bb43f"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{certification_details_Donor_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="99" y="0" width="99" height="18" uuid="a158ca04-87f8-4df2-99d5-52de5f99b64e"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{certification_details_Blood_Group}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+					<reportElement style="Detail" positionType="Float" x="198" y="0" width="99" height="18" uuid="daa1e13a-0f8f-4803-9735-a7e9077385d1"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{certification_details_Donation_Date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="297" y="0" width="99" height="18" uuid="3d3b5cd7-a674-4046-b4d7-fd38708d914a"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{certification_details_Blood_Type}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="396" y="0" width="99" height="18" uuid="11b4368a-3869-4300-bf33-4b9e1f3ce82a"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{certification_details_Issued_By}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+					<reportElement style="Detail" positionType="Float" x="495" y="0" width="99" height="18" uuid="6df85043-7583-42a1-a0c1-dc2ec22cddac"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{certification_details_Issue_Date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="594" y="0" width="99" height="18" uuid="7e6956cc-7c4a-42c0-aae5-1c5e17a52239"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{certification_details_Certification_Status}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="693" y="0" width="99" height="18" uuid="5a043190-cac1-44ac-b296-886b544599d4"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{certification_details_Contact_no}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="749f94cd-e568-44cf-a5d7-84b4da80ffc0"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

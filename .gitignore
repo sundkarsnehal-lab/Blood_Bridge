@@ -1,0 +1,7 @@
+/build/
+/dist/
+/nbproject/private/
+/web/WEB-INF/classes/
+*.class
+*.log
+/build/generated/

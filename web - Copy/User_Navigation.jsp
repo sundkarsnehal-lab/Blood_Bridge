@@ -1,0 +1,18 @@
+<%-- 
+    Document   : User_Navigation
+    Created on : 25 Dec, 2025, 10:50:13 AM
+    Author     : sundk
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+         <link rel="stylesheet" href="css/bootstrap.css"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+       
+    </body>
+</html>

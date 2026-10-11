@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2_Add_Category" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a3a83f23-d1ce-4311-91ca-09c3bf90130e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     blood_category.`Category_id` AS blood_category_Category_id,
+     blood_category.`Blood_Group` AS blood_category_Blood_Group,
+     blood_category.`Blood_Image` AS blood_category_Blood_Image,
+     blood_category.`Blood_Type` AS blood_category_Blood_Type,
+     blood_category.`Description` AS blood_category_Description,
+     blood_category.`Status` AS blood_category_Status
+FROM
+     `blood_category` blood_category]]>
+	</queryString>
+	<field name="blood_category_Category_id" class="java.lang.Integer"/>
+	<field name="blood_category_Blood_Group" class="java.lang.String"/>
+	<field name="blood_category_Blood_Image" class="java.lang.String"/>
+	<field name="blood_category_Blood_Type" class="java.lang.String"/>
+	<field name="blood_category_Description" class="java.lang.String"/>
+	<field name="blood_category_Status" class="java.lang.String"/>
+	<group name="blood_category_Category_id">
+		<groupExpression><![CDATA[$F{blood_category_Category_id}]]></groupExpression>
+		<groupHeader>
+			<band height="27">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="3" width="721" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="3ca2e955-eb75-4e36-8cfe-4739b4898cec"/>
+				</frame>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="SubTitle" mode="Opaque" x="2" y="3" width="815" height="24" forecolor="#FFFFFF" backcolor="#FFCCFF" uuid="ce6e3eb0-f4aa-4566-a9c2-ad20d50b52c7"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{blood_category_Category_id}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="68" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="817" height="66" backcolor="#000000" uuid="075e167e-1243-41eb-89ad-60aa6397012e"/>
+				<staticText>
+					<reportElement style="Title" mode="Opaque" x="0" y="0" width="817" height="66" backcolor="#FF0033" uuid="648c59c0-3467-44b1-91bc-0ef5de477fab"/>
+					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+					<textElement verticalAlignment="Bottom">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[                  Blood Category]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" isPrintRepeatedValues="false" mode="Opaque" x="0" y="0" width="817" height="18" forecolor="#FFFFFF" backcolor="#990000" uuid="11cb702e-7983-48c9-8e40-9b713492b2fd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Blood Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="159" y="0" width="159" height="18" forecolor="#FFFFFF" uuid="4b93c0f3-791e-4b58-8f0c-1ad21c2c243b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Blood_Image]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="318" y="0" width="159" height="18" forecolor="#FFFFFF" uuid="1bf5ef9a-2858-44f0-89cf-578adf6537b3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Blood_Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="477" y="0" width="159" height="18" forecolor="#FFFFFF" uuid="2e19eb10-a590-4753-982f-5f2f4c0f3d87"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="636" y="0" width="159" height="18" forecolor="#FFFFFF" uuid="842dd867-e0b5-412b-b73d-a6f00ef8f76a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="94cdb28b-3385-45a4-8486-49fa7e06bcc9"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="159" height="18" uuid="24a9dcea-48c3-483a-b980-9cc30f61f116"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{blood_category_Blood_Group}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="159" y="0" width="159" height="18" uuid="6d927f40-963f-48c3-9e47-f35137f7265f"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{blood_category_Blood_Image}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="318" y="0" width="159" height="18" uuid="f5eeac1e-87d5-4dbd-a572-f8bf49c926b1"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{blood_category_Blood_Type}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="477" y="0" width="159" height="18" uuid="488f0280-40f9-4057-b0a9-d72e15906d9d"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{blood_category_Description}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="636" y="0" width="159" height="18" uuid="cbf0f91e-a762-4d25-a192-93bfaeed8a43"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{blood_category_Status}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="8e279b0b-4257-4792-85dd-0229bf4dd6e7"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="af6e4913-ef50-466e-a524-2032eef24779"/>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

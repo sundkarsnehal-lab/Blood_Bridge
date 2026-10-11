@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report4_Camp_Details" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3113e735-5bfb-4802-b2d4-77e2e86e35f1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     camp_details.`Camp_id` AS camp_details_Camp_id,
+     camp_details.`Camp_name` AS camp_details_Camp_name,
+     camp_details.`Organizer_name` AS camp_details_Organizer_name,
+     camp_details.`Address` AS camp_details_Address,
+     camp_details.`Date` AS camp_details_Date,
+     camp_details.`Start_time` AS camp_details_Start_time,
+     camp_details.`End_time` AS camp_details_End_time,
+     camp_details.`Email` AS camp_details_Email,
+     camp_details.`Contact_no` AS camp_details_Contact_no
+FROM
+     `camp_details` camp_details]]>
+	</queryString>
+	<field name="camp_details_Camp_id" class="java.lang.Integer"/>
+	<field name="camp_details_Camp_name" class="java.lang.String"/>
+	<field name="camp_details_Organizer_name" class="java.lang.String"/>
+	<field name="camp_details_Address" class="java.lang.String"/>
+	<field name="camp_details_Date" class="java.sql.Date"/>
+	<field name="camp_details_Start_time" class="java.lang.String"/>
+	<field name="camp_details_End_time" class="java.lang.String"/>
+	<field name="camp_details_Email" class="java.lang.String"/>
+	<field name="camp_details_Contact_no" class="java.lang.Long"/>
+	<group name="camp_details_Camp_id">
+		<groupExpression><![CDATA[$F{camp_details_Camp_id}]]></groupExpression>
+		<groupHeader>
+			<band height="41">
+				<textField isStretchWithOverflow="true">
+					<reportElement style="SubTitle" mode="Opaque" x="2" y="0" width="819" height="24" forecolor="#FFFFFF" backcolor="#FFCCFF" uuid="5caea472-8046-4bfb-aa03-b6521d02a93e"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{camp_details_Camp_id}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="19"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="66" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="821" height="66" backcolor="#000000" uuid="acda2520-7aa2-4228-8d8a-a9b288eba235"/>
+				<staticText>
+					<reportElement style="Title" mode="Opaque" x="0" y="0" width="821" height="66" backcolor="#FF3333" uuid="c68e9f88-6ea0-4a08-bf76-b50c1dd6423c"/>
+					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+					<textElement verticalAlignment="Bottom">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[                    Camp Details]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="0" y="0" width="821" height="18" forecolor="#FFFFFF" backcolor="#990033" uuid="e34ae676-fa41-4713-a586-271bd0f1226a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Camp_Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="99" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="6c5019e3-222a-40ba-b29a-751a5e9b7915"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Organizer_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="198" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="627d06d0-bfd3-4f50-91d2-a952ca7e4bd7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="297" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="fc0d7153-d4f9-46bc-aa71-786bf7eb108a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="396" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="66169375-de94-4846-b7cd-7f47d7637aa5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Start_time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="495" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="f9078603-85ca-4ca9-8bcb-b0e69c8ddd89"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[End_time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="594" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="8e9f727b-6a9a-4220-ba9f-18bcefec94d8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="693" y="0" width="99" height="18" forecolor="#FFFFFF" uuid="45450638-c2ae-48d0-8bb8-4d86d01af032"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact_no]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="45344378-c16f-4008-ade1-62782e05ac0f"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="99" height="18" uuid="71aec51d-7c20-4644-96de-ad77bd9dae5b"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{camp_details_Camp_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="99" y="0" width="99" height="18" uuid="7f235fd7-91f8-43c2-a77b-11523cf6987b"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{camp_details_Organizer_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="198" y="0" width="99" height="18" uuid="15e2feef-abee-4a23-8719-3376eb66d937"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{camp_details_Address}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+					<reportElement style="Detail" positionType="Float" x="297" y="0" width="99" height="18" uuid="d98d5304-3898-493b-8a26-70ad695a80b5"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{camp_details_Date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="396" y="0" width="99" height="18" uuid="a79559d1-9e6d-47fe-a305-cd8581c20c49"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{camp_details_Start_time}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="495" y="0" width="99" height="18" uuid="71478457-aab3-43bb-bd54-56b12d75981e"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{camp_details_End_time}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="594" y="0" width="99" height="18" uuid="fda05e54-da58-43ab-b196-ef6ad20c33b1"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{camp_details_Email}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="693" y="0" width="104" height="18" uuid="21d43df2-37f2-4c70-894b-52c910f1fa0c"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{camp_details_Contact_no}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="14" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="2ef267a7-199a-46de-947f-a454e0d7ec2b"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
